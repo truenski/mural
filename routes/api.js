@@ -27,18 +27,11 @@ router.post('/new', bodyParser.json(), (req, res) => {
 });
 
 //Endpoint
-router.delete('/del/:id', (req,res)=>{
-     
-     posts.deletePost(req.params.id)
-res.sendStatus(200);
-} 
-);
+router.delete('/del/:id', (req, res) => {
 
-router.post('/edit/:title/:newTitle', (req,res)=>{
-    
-    posts.editPost(req.params.title, req.params.newTitle)
-res.sendStatus(200);
-} 
-);
+    posts.deletePost(req.params.id)
+    res.sendStatus(200);
+});
 
-module.exports=router;
+
+module.exports = router;
