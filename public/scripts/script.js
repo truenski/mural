@@ -1,12 +1,13 @@
-//sempre que o conteudo for atualizado...
+const port = process.env.PORT || 3000;
 
+//sempre que o conteudo for atualizado...
 document.addEventListener('DOMContentLoaded', () => {
     updatePosts();
 })
 
 function updatePosts() {
     //(url, option)
-    fetch("http://localhost:3000/api/all").then(res => { return res.json() })
+    fetch(`http://localhost:${port}/api/all`).then(res => { return res.json() })
         .then(
             json => {
                 //JSON string
@@ -45,7 +46,7 @@ function updatePosts() {
 function deletePost(id) {
 
 
-    fetch("http://localhost:3000/api/del/" + id, { method: "DELETE" }).then(res => {
+    fetch(`http://localhost:${port}/api/del/` + id, { method: "DELETE" }).then(res => {
         console.log(res);
         updatePosts();
     })
@@ -71,7 +72,7 @@ function newPost() {
         body: JSON.stringify(post)
             //precisa passar body como string
     }
-    fetch("http://localhost:3000/api/new", options).then(res => {
+    fetch(`http://localhost:${port}/api/new`, options).then(res => {
         console.log(res);
         updatePosts();
         document.getElementById('title').value = "";
