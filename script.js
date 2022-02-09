@@ -1,4 +1,4 @@
-const PORT = 3000;
+const port = process.env.3000;
 const express = require('express');
 const apiRoute = require('./routes/api');
 const path = require("path");
@@ -24,4 +24,4 @@ app.use('/api', apiRoute);
 
 
 //=======================================================
-app.listen(PORT, () => { console.log('listening on port', PORT) });
+app.listen(PORT, () => { console.log('listening') });
