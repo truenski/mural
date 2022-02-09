@@ -3,9 +3,10 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const posts = require('../model/posts');
 const cors = require('cors');
+const port = process.env.PORT || 3000;
 //======================================================
 const options = {
-    origin: 'http://localhost:3000'
+    origin: `http://localhost:${port}`
 }
 
 
