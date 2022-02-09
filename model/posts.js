@@ -16,9 +16,9 @@ module.exports = {
         this.posts.push({ id: generateID(), title, description })
     },
 
-    deletePost(idPexclusao) {
-        this.posts = this.posts.filter((itemDentroDoArray) => {
-            return itemDentroDoArray.id !== idPexclusao
+    deletePost(PostToBeDeleted) {
+        this.posts = this.posts.filter((post) => {
+            return post.id !== PostToBeDeleted
         })
     },
 
