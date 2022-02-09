@@ -1,4 +1,4 @@
-const port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
 //sempre que o conteudo for atualizado...
 document.addEventListener('DOMContentLoaded', () => {
